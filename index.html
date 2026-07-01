@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>暗处生花 · 西北地下偶像青春纪实 · 开题答辩</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:       #FAFBF6;
+  --sand:     #F2E8D5;
+  --sand2:    #E8DFC8;
+  --green:    #2D5F3F;
+  --green2:   #3E7A54;
+  --green3:   #6AAF85;
+  --coral:    #E8533F;
+  --coral2:   #F4795F;
+  --coral-bg: #FDF0ED;
+  --amber:    #C4860A;
+  --amber-bg: #FDF6E3;
+  --text:     #1E3328;
+  --text2:    #4A6555;
+  --text3:    #8FA894;
+  --line:     #D6E4D8;
+  --serif: 'Noto Serif SC', serif;
+  --sans: 'Noto Sans SC', -apple-system, sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,251,246,0.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2rem;height:54px;
+}
+.nav-brand{font-family:var(--serif);font-size:15px;color:var(--green);font-weight:600}
+.nav-links{display:flex;gap:0}
+.nav-links a{
+  color:var(--text2);text-decoration:none;font-size:13px;
+  padding:0 14px;height:54px;display:flex;align-items:center;
+  border-bottom:2px solid transparent;transition:all .2s;
+}
+.nav-links a:hover{color:var(--green);border-bottom-color:var(--coral)}
+
+/* HERO */
+.hero{
+  min-height:88vh;display:flex;flex-direction:column;
+  justify-content:center;padding:5rem 2rem 3rem;
+  max-width:1060px;margin:0 auto;position:relative;
+}
+.hero-tag{
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--coral);font-weight:600;margin-bottom:1.2rem;
+}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(2.6rem,6vw,4.2rem);
+  font-weight:700;line-height:1.15;
+  color:var(--text);margin-bottom:.5rem;
+}
+.hero-title .crack{color:var(--coral)}
+.hero-dash{
+  font-family:var(--serif);
+  font-size:clamp(1.1rem,2.5vw,1.6rem);
+  color:var(--text2);margin-bottom:2rem;
+}
+.hero-meta{
+  display:flex;gap:2rem;flex-wrap:wrap;
+  font-size:14px;color:var(--text3);
+  border-top:1px solid var(--line);padding-top:1.2rem;
+  margin-bottom:3rem;
+}
+.hero-meta span b{color:var(--green);font-weight:600}
+
+/* SVG flower divider */
+.flower-divider{
+  display:flex;justify-content:center;align-items:center;
+  gap:1.2rem;padding:2.5rem 0;
+}
+.flower-divider::before,.flower-divider::after{
+  content:'';flex:1;height:1px;background:var(--line);
+}
+.flower-svg{opacity:.55}
+
+/* KPI row */
+.kpi-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  margin:2rem 0;
+}
+@media(max-width:700px){.kpi-row{grid-template-columns:repeat(2,1fr)}}
+.kpi{
+  background:var(--sand);border-radius:12px;padding:1.2rem 1.4rem;
+  border:1px solid var(--sand2);
+}
+.kpi-num{
+  font-family:var(--serif);font-size:2.6rem;font-weight:700;
+  color:var(--green);line-height:1;margin-bottom:4px;
+}
+.kpi-num.coral{color:var(--coral)}
+.kpi-num sup{font-size:1.1rem;color:var(--text2)}
+.kpi-label{font-size:13px;color:var(--text2)}
+.kpi-sub{font-size:11px;color:var(--text3);margin-top:3px}
+
+/* SECTIONS */
+section{max-width:1060px;margin:0 auto;padding:0 2rem 5rem}
+.section-header{margin-bottom:2rem}
+.section-eyebrow{
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--coral);font-weight:600;margin-bottom:.5rem;
+}
+.section-title{
+  font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);
+  font-weight:700;color:var(--text);margin-bottom:.4rem;
+}
+.section-note{font-size:14px;color:var(--text2)}
+
+/* Cards */
+.card{
+  background:var(--sand);border:1px solid var(--sand2);
+  border-radius:14px;padding:1.6rem;
+}
+.card.white{background:#fff;border-color:var(--line)}
+.card.coral{background:var(--coral-bg);border-color:rgba(232,83,63,.18)}
+.card.amber{background:var(--amber-bg);border-color:rgba(196,134,10,.15)}
+.card.green{background:#EAF4EE;border-color:rgba(61,122,84,.15)}
+
+/* Purpose grid */
+.purpose-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.purpose-grid{grid-template-columns:1fr}}
+.purpose-card{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:1.5rem;position:relative;overflow:hidden;
+}
+.purpose-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:var(--coral);border-radius:4px 0 0 4px;
+}
+.purpose-num{
+  font-family:var(--serif);font-size:1.8rem;font-weight:700;
+  color:var(--line);position:absolute;top:1rem;right:1.2rem;
+}
+.purpose-title{font-size:15px;font-weight:600;color:var(--green);margin-bottom:.5rem}
+.purpose-body{font-size:13.5px;color:var(--text2);line-height:1.65}
+
+/* Stats bar (existing reports) */
+.stat-row{display:flex;flex-direction:column;gap:8px}
+.stat-item{display:flex;align-items:center;gap:12px}
+.stat-label{font-size:13px;color:var(--text2);min-width:160px;flex-shrink:0}
+.stat-bar{flex:1;height:8px;border-radius:4px;background:var(--sand2);overflow:hidden}
+.stat-fill{height:100%;border-radius:4px}
+.stat-val{font-size:13px;font-weight:600;color:var(--green);min-width:36px;text-align:right}
+
+/* Two col */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+
+/* Northwest */
+.nw-label{
+  display:inline-block;padding:3px 10px;border-radius:20px;
+  background:rgba(232,83,63,.12);color:var(--coral);
+  font-size:12px;font-weight:600;margin-bottom:.8rem;
+}
+
+/* Stories */
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.story-grid{grid-template-columns:1fr}}
+.story-card{
+  border-radius:14px;padding:0;overflow:hidden;
+  border:1px solid var(--line);background:#fff;
+}
+.story-head{padding:1rem 1.4rem;font-size:13px;font-weight:600;color:#fff}
+.story-head.s1{background:var(--coral)}
+.story-head.s2{background:var(--green2)}
+.story-head.s3{background:var(--amber)}
+.story-body{padding:1.4rem}
+.story-title{
+  font-family:var(--serif);font-size:15px;font-weight:600;
+  color:var(--text);margin-bottom:.6rem;line-height:1.35;
+}
+.story-genre{font-size:12px;color:var(--text3);margin-bottom:.8rem}
+.story-method-tag{
+  display:inline-block;padding:2px 8px;border-radius:4px;
+  font-size:11px;font-weight:500;margin-bottom:.5rem;
+}
+.s1-tag{background:rgba(232,83,63,.1);color:var(--coral)}
+.s2-tag{background:rgba(61,122,84,.1);color:var(--green2)}
+.s3-tag{background:rgba(196,134,10,.1);color:var(--amber)}
+.story-q{font-size:13.5px;color:var(--text2);font-style:italic;line-height:1.5}
+
+/* Arrow flow */
+.flow-row{
+  display:flex;align-items:center;gap:0;
+  background:var(--sand);border-radius:12px;padding:1.2rem 1.4rem;
+  margin-bottom:1rem;flex-wrap:wrap;gap:4px;
+}
+.flow-item{
+  display:flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--line);
+  border-radius:8px;padding:.6rem 1rem;font-size:14px;
+  font-weight:500;color:var(--green);
+}
+.flow-item .num{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--coral);color:#fff;
+  font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.flow-arrow{color:var(--text3);font-size:18px;margin:0 4px}
+
+/* Diff table */
+.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:600px){.diff-grid{grid-template-columns:1fr}}
+.diff-card{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:1.2rem;
+}
+.diff-title{font-size:13px;font-weight:600;color:var(--green);margin-bottom:.9rem}
+.diff-bar-row{margin-bottom:7px}
+.diff-bar-label{font-size:11px;color:var(--text3);display:flex;justify-content:space-between;margin-bottom:3px}
+.diff-bar-label b{color:var(--text)}
+.diff-bar{height:6px;border-radius:3px;background:var(--sand2);overflow:hidden}
+.diff-fill-old{height:100%;background:var(--sand2);border-radius:3px}
+/* we just set widths inline */
+.bar-old{background:#C8C0B0}
+.bar-new{background:var(--coral)}
+
+/* Timeline */
+.timeline{display:flex;gap:0;position:relative;padding-top:3rem}
+.timeline::before{
+  content:'';position:absolute;top:1.1rem;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--coral),var(--green3));
+}
+.tl-item{flex:1;text-align:center;padding:0 .5rem;position:relative}
+.tl-dot{
+  width:20px;height:20px;border-radius:50%;
+  background:var(--coral);border:3px solid var(--bg);
+  margin:0 auto 1rem;position:relative;z-index:1;
+}
+.tl-item:nth-child(odd) .tl-dot{background:var(--green2)}
+.tl-period{font-size:11px;color:var(--text3);margin-bottom:.3rem}
+.tl-phase{font-size:13px;font-weight:600;color:var(--green);margin-bottom:.3rem}
+.tl-desc{font-size:12px;color:var(--text2);line-height:1.4}
+
+/* Roles */
+.role-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.8rem}
+.role-card{
+  background:var(--sand);border-radius:10px;padding:1rem 1.1rem;
+  border:1px solid var(--sand2);
+}
+.role-name{font-size:14px;font-weight:600;color:var(--green);margin-bottom:.5rem}
+.role-tags{display:flex;flex-wrap:wrap;gap:4px}
+.role-tag{
+  font-size:11px;padding:2px 7px;border-radius:4px;
+  background:#fff;border:1px solid var(--line);color:var(--text2);
+}
+
+/* quote */
+.big-quote{
+  background:var(--sand);border-radius:16px;padding:2.4rem 2.8rem;
+  position:relative;margin:1rem 0;
+}
+.big-quote::before{
+  content:'"';font-family:var(--serif);font-size:5rem;
+  color:var(--coral);opacity:.18;
+  position:absolute;top:-.5rem;left:1.5rem;line-height:1;
+}
+.big-quote p{
+  font-family:var(--serif);font-size:clamp(1rem,2vw,1.25rem);
+  color:var(--text);line-height:1.75;position:relative;z-index:1;
+}
+.big-quote p em{color:var(--coral);font-style:normal;font-weight:700}
+
+/* Closing */
+.closing{
+  background:var(--green);color:#fff;
+  border-radius:20px;padding:3.5rem;
+  text-align:center;margin:0 2rem 4rem;
+  max-width:1060px;margin-left:auto;margin-right:auto;
+}
+.closing h2{
+  font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);
+  margin-bottom:1rem;line-height:1.4;
+}
+.closing p{opacity:.75;font-size:15px}
+.closing .close-meta{margin-top:2rem;font-size:13px;opacity:.55}
+
+/* Utility */
+.p-body{font-size:14.5px;color:var(--text2);line-height:1.75;margin-bottom:.7rem}
+.strong-green{color:var(--green);font-weight:600}
+.strong-coral{color:var(--coral);font-weight:600}
+.tag{
+  display:inline-block;padding:2px 9px;border-radius:4px;
+  font-size:12px;font-weight:500;
+}
+.tag-green{background:rgba(45,95,63,.1);color:var(--green2)}
+.tag-coral{background:rgba(232,83,63,.1);color:var(--coral)}
+.tag-amber{background:rgba(196,134,10,.1);color:var(--amber)}
+
+footer{
+  text-align:center;padding:1.5rem;
+  font-size:12px;color:var(--text3);
+  border-top:1px solid var(--line);
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">暗处生花 · 开题答辩</span>
+  <div class="nav-links">
+    <a href="#intro">概念</a>
+    <a href="#purpose">选题</a>
+    <a href="#existing">既有报道</a>
+    <a href="#why-nw">西北论证</a>
+    <a href="#stories">三篇主稿</a>
+    <a href="#feasibility">可行性</a>
+    <a href="#timeline">计划</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <p class="hero-tag">毕业设计 · 融合新闻作品 · 开题报告</p>
+  <h1 class="hero-title"><span class="crack">暗</span>处生花</h1>
+  <p class="hero-dash">——西北地下偶像青春纪实</p>
+  <div class="hero-meta">
+    <span><b>汇报人</b>　史伟馨 · 牟宁霞 · 孟洋</span>
+    <span><b>指导教师</b>　白姗姗</span>
+    <span><b>学院</b>　新闻传播学院 · 新闻学 · 2023级</span>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-num coral">0<sup>篇</sup></div>
+      <div class="kpi-label">覆盖西北的现有报道</div>
+      <div class="kpi-sub">梳理29篇，一篇都没有</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num">300<sup>+</sup></div>
+      <div class="kpi-label">全国活跃团体数量</div>
+      <div class="kpi-sub">2025年，仍在高速增长</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num coral">1<sup>篇</sup></div>
+      <div class="kpi-label">追踪离团者完整经历</div>
+      <div class="kpi-sub">仅记录到退团瞬间</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num">3</div>
+      <div class="kpi-label">篇主稿 + 视频 + 海报</div>
+      <div class="kpi-sub">融合新闻全媒体呈现</div>
+    </div>
+  </div>
+</div>
+
+<div class="flower-divider">
+  <svg class="flower-svg" width="36" height="48" viewBox="0 0 36 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 46 C18 34 16 26 18 16 C20 10 24 6 18 1" stroke="#E8533F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 16 C12 12 6 13 2 8" stroke="#E8533F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 12 C24 8 28 4 26 1" stroke="#E8533F" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="18" cy="2" r="3" fill="none" stroke="#C4860A" stroke-width="1.5"/>
+    <path d="M15 2 C12 -1 8 0 7 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M21 2 C24 -1 28 0 29 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M18 28 C12 26 7 29 4 25" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- SECTION 1: 何为地下偶像 -->
+<section id="intro">
+  <div class="section-header">
+    <p class="section-eyebrow">01 · 概念铺垫</p>
+    <h2 class="section-title">何为地下偶像</h2>
+    <p class="section-note">先把概念讲清楚，才能讨论选题的价值</p>
+  </div>
+
+  <div class="two-col" style="margin-bottom:1.2rem">
+    <div>
+      <p class="p-body">地下偶像（Underground Idol，日文：地下アイドル）起源于20世纪90年代日本偶像产业的"冬季"，是指在<strong class="strong-green">无经纪公司签约</strong>或缺乏主流商业资源支持的情况下，以 Livehouse（小型演出场所）为主要舞台、靠<strong class="strong-coral">粉丝特典会</strong>（付费一对一互动环节）和周边销售维持运营的自营偶像团体。</p>
+      <p class="p-body">地下偶像文化2011年传入中国，2023年被视为中国"地下偶像元年"——当年新成立团体91个。截至2025年，全国团体数量已突破<strong class="strong-coral">300个</strong>，但西北地区的公共媒体几乎从未触及。</p>
+    </div>
+    <div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="card white" style="display:flex;gap:14px;align-items:flex-start">
+          <div style="width:38px;height:38px;border-radius:8px;background:var(--coral-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">🎪</div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--green);margin-bottom:3px">舞台门槛低</div>
+            <div style="font-size:13px;color:var(--text2)">任何能容纳几十人的场地皆可演出，Livehouse 是主战场</div>
+          </div>
+        </div>
+        <div class="card white" style="display:flex;gap:14px;align-items:flex-start">
+          <div style="width:38px;height:38px;border-radius:8px;background:#EAF4EE;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">🤝</div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--green);margin-bottom:3px">距离感极近</div>
+            <div style="font-size:13px;color:var(--text2)">演出后偶像与粉丝可零距离握手、合影、聊天</div>
+          </div>
+        </div>
+        <div class="card white" style="display:flex;gap:14px;align-items:flex-start">
+          <div style="width:38px;height:38px;border-radius:8px;background:var(--amber-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">💼</div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--green);margin-bottom:3px">身份高度兼职化</div>
+            <div style="font-size:13px;color:var(--text2)">绝大多数成员白天工作或学习，周末才登台</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="display:flex;align-items:center;gap:1.5rem;padding:1.2rem 1.6rem">
+    <div style="font-size:2rem;flex-shrink:0">⚠️</div>
+    <div>
+      <div style="font-size:14px;font-weight:600;color:var(--coral);margin-bottom:3px">矛盾与入口</div>
+      <div style="font-size:14px;color:var(--text2)">已经很广泛——但尚未被充分认知。数以百计的活跃团体与庞大粉丝社群，却极少出现在大众传播视野，更几乎从未被<strong style="color:var(--coral)">西北地区</strong>的公共媒体触及。这个矛盾，是我们选题的入口。</div>
+    </div>
+  </div>
+</section>
+
+<div class="flower-divider">
+  <svg class="flower-svg" width="36" height="48" viewBox="0 0 36 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 46 C18 34 16 26 18 16 C20 10 24 6 18 1" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 16 C12 12 6 13 2 8" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 12 C24 8 28 4 26 1" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="18" cy="2" r="3" fill="none" stroke="#C4860A" stroke-width="1.5"/>
+    <path d="M18 28 C12 26 7 29 4 25" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- SECTION 2: 选题目的 -->
+<section id="purpose">
+  <div class="section-header">
+    <p class="section-eyebrow">02 · 选题目的</p>
+    <h2 class="section-title">四重追问：为什么要做这个题</h2>
+  </div>
+  <div class="purpose-grid">
+    <div class="purpose-card">
+      <span class="purpose-num">01</span>
+      <div class="purpose-title">呈现缺席的群体面孔</div>
+      <div class="purpose-body">现有报道高度集中于上海、北京、成都、广州。兰州地处西北腹地，资源匮乏、场地稀缺，是观察地下偶像生态最原始形态的窗口。选择西北，是为了让"缺席者"发声。</div>
+    </div>
+    <div class="purpose-card">
+      <span class="purpose-num">02</span>
+      <div class="purpose-title">追问行业结构性问题</div>
+      <div class="purpose-body">现有报道几乎不触及行业灰色地带：风险转嫁机制、制度监管盲区、经纪关系乱象。我们引入调查报道视角，追问<em style="font-style:normal;color:var(--coral)">"谁在获益，谁在承担代价"</em>。</div>
+    </div>
+    <div class="purpose-card">
+      <span class="purpose-num">03</span>
+      <div class="purpose-title">记录从业者的"全周期"叙事</div>
+      <div class="purpose-body">29篇报道里，仅1篇触及离团，且只记录到退团瞬间。我们专门追踪离团1—3年的前成员，回答"这段经历究竟改变了什么"，补足纵向时间维度。</div>
+    </div>
+    <div class="purpose-card">
+      <span class="purpose-num">04</span>
+      <div class="purpose-title">回应更大的社会命题</div>
+      <div class="purpose-body">地下偶像现象背后，是就业压力、情感稀缺、主流通道收窄等时代背景的集中投射。当年轻人选择在主流之外寻找表达空间，这个社会给了他们什么，又拿走了什么？</div>
+    </div>
+  </div>
+</section>
+
+<div class="flower-divider">
+  <svg class="flower-svg" width="36" height="48" viewBox="0 0 36 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 46 C18 34 16 26 18 16 C20 10 24 6 18 1" stroke="#E8533F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 16 C12 12 6 13 2 8" stroke="#E8533F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 12 C24 8 28 4 26 1" stroke="#E8533F" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="18" cy="2" r="3" fill="none" stroke="#C4860A" stroke-width="1.5"/>
+    <path d="M15 2 C12 -1 8 0 7 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M21 2 C24 -1 28 0 29 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M18 28 C12 26 7 29 4 25" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 36 C24 34 30 36 33 32" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- SECTION 3: 既有报道 -->
+<section id="existing">
+  <div class="section-header">
+    <p class="section-eyebrow">03 · 已有报道综述</p>
+    <h2 class="section-title">29篇报道，5大共同局限</h2>
+    <p class="section-note">系统梳理2021—2025年间重要报道，呈现既有叙事的全景与空白</p>
+  </div>
+
+  <div class="two-col" style="margin-bottom:1.5rem">
+    <div>
+      <div style="margin-bottom:1rem">
+        <div style="font-size:13px;font-weight:600;color:var(--text2);margin-bottom:.6rem;letter-spacing:.05em">价值倾向光谱（29篇）</div>
+        <div class="stat-row">
+          <div class="stat-item">
+            <span class="stat-label">客观中立</span>
+            <div class="stat-bar"><div class="stat-fill" style="width:55%;background:var(--green3)"></div></div>
+            <span class="stat-val">16篇</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">批判性视角</span>
+            <div class="stat-bar"><div class="stat-fill" style="width:24%;background:var(--coral)"></div></div>
+            <span class="stat-val">7篇</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">正面/共情</span>
+            <div class="stat-bar"><div class="stat-fill" style="width:17%;background:var(--amber)"></div></div>
+            <span class="stat-val">5篇</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">猎奇化</span>
+            <div class="stat-bar"><div class="stat-fill" style="width:4%;background:#B0A090"></div></div>
+            <span class="stat-val">1篇</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:1.2rem">
+        <div style="font-size:13px;font-weight:600;color:var(--text2);margin-bottom:.6rem;letter-spacing:.05em">媒体性质分布</div>
+        <div class="stat-row">
+          <div class="stat-item">
+            <span class="stat-label">主流媒体</span>
+            <div class="stat-bar"><div class="stat-fill" style="width:62%;background:var(--green2)"></div></div>
+            <span class="stat-val">18篇</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">新媒体</span>
+            <div class="stat-bar"><div class="stat-fill" style="width:24%;background:var(--green3)"></div></div>
+            <span class="stat-val">7篇</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">校园/垂类媒体</span>
+            <div class="stat-bar"><div class="stat-fill" style="width:14%;background:#A8C8B0"></div></div>
+            <span class="stat-val">4篇</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:600;color:var(--text2);margin-bottom:.6rem;letter-spacing:.05em">城市覆盖（西北地区 = 0篇）</div>
+      <div class="stat-row">
+        <div class="stat-item"><span class="stat-label">上海</span><div class="stat-bar"><div class="stat-fill" style="width:100%;background:var(--green2)"></div></div><span class="stat-val">14篇</span></div>
+        <div class="stat-item"><span class="stat-label">北京</span><div class="stat-bar"><div class="stat-fill" style="width:93%;background:var(--green2)"></div></div><span class="stat-val">13篇</span></div>
+        <div class="stat-item"><span class="stat-label">成都/川渝</span><div class="stat-bar"><div class="stat-fill" style="width:29%;background:var(--green3)"></div></div><span class="stat-val">4篇</span></div>
+        <div class="stat-item"><span class="stat-label">广州/南京</span><div class="stat-bar"><div class="stat-fill" style="width:21%;background:var(--green3)"></div></div><span class="stat-val">3篇</span></div>
+        <div class="stat-item">
+          <span class="stat-label" style="color:var(--coral);font-weight:600">西北地区</span>
+          <div class="stat-bar" style="background:#FAE8E4"><div class="stat-fill" style="width:0%;background:var(--coral)"></div></div>
+          <span class="stat-val" style="color:var(--coral)">0篇</span>
+        </div>
+      </div>
+      <div style="margin-top:.6rem;padding:.6rem .8rem;background:var(--coral-bg);border-radius:8px;border-left:3px solid var(--coral)">
+        <div style="font-size:12px;color:var(--coral)">本组报道将首次填补这一地理叙事空白</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1.5rem">
+    <div style="font-size:13px;font-weight:600;color:var(--text2);margin-bottom:.8rem;letter-spacing:.05em">五大共同局限</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="card white" style="display:flex;gap:12px;align-items:flex-start;padding:1rem 1.2rem">
+        <div style="width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">1</div>
+        <div><b style="color:var(--green)">地域高度集中于东部</b>　所有报道均以上、北、广、成等一线城市为报道地，西北地区的地下偶像生态从未进入公共视野</div>
+      </div>
+      <div class="card white" style="display:flex;gap:12px;align-items:flex-start;padding:1rem 1.2rem">
+        <div style="width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">2</div>
+        <div><b style="color:var(--green)">从业者"后期生活"无追踪</b>　几乎全部聚焦在役状态，离团者的身份重建与生命轨迹几乎空白，仅有一篇记录到离团瞬间</div>
+      </div>
+      <div class="card white" style="display:flex;gap:12px;align-items:flex-start;padding:1rem 1.2rem">
+        <div style="width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">3</div>
+        <div><b style="color:var(--green)">产业结构性分析付之阙如</b>　从未完整呈现一场演出的成本收益模型，未追问"谁在获益、谁承担风险"</div>
+      </div>
+      <div class="card white" style="display:flex;gap:12px;align-items:flex-start;padding:1rem 1.2rem">
+        <div style="width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">4</div>
+        <div><b style="color:var(--green)">信源单一，缺乏多方交叉</b>　受访对象以自愿配合的现役成员为主，演出方、场地方、前成员等关键信源严重缺席</div>
+      </div>
+      <div class="card white" style="display:flex;gap:12px;align-items:flex-start;padding:1rem 1.2rem">
+        <div style="width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">5</div>
+        <div><b style="color:var(--green)">批判性视角总体薄弱</b>　仅约24%的报道带有批判色彩，对监管风险、资本介入、伦理灰色地带的系统追问严重不足</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem;text-align:center">
+    <a href="https://kklhen.github.io/shuju" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:.6rem 1.4rem;border-radius:8px;background:var(--sand);border:1px solid var(--sand2);color:var(--green2);text-decoration:none;font-size:14px;font-weight:500">
+      📊 查看完整29篇数据可视化图谱 →
+    </a>
+  </div>
+</section>
+
+<div class="flower-divider">
+  <svg class="flower-svg" width="36" height="48" viewBox="0 0 36 48" fill="none">
+    <path d="M18 46 C18 34 16 26 18 16 C20 10 24 6 18 1" stroke="#C4860A" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 16 C12 12 6 13 2 8" stroke="#C4860A" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 12 C24 8 28 4 26 1" stroke="#C4860A" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="18" cy="2" r="3" fill="none" stroke="#C4860A" stroke-width="1.5"/>
+    <path d="M15 2 C12 -1 8 0 7 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M21 2 C24 -1 28 0 29 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- SECTION 4: 为何西北 -->
+<section id="why-nw">
+  <div class="section-header">
+    <p class="section-eyebrow">04 · 选题定位</p>
+    <h2 class="section-title">为何聚焦西北：立体论证</h2>
+  </div>
+
+  <div class="two-col" style="margin-bottom:1.5rem">
+    <div>
+      <div class="card green" style="margin-bottom:0;height:100%">
+        <div style="font-size:14px;font-weight:600;color:var(--green);margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid rgba(61,122,84,.15)">西北本身的独特价值</div>
+        <div style="display:flex;flex-direction:column;gap:.9rem">
+          <div>
+            <div style="font-size:13.5px;font-weight:600;color:var(--green2);margin-bottom:3px">① 地域稀缺性</div>
+            <div style="font-size:13px;color:var(--text2)">29篇报道中无一以西北城市为主要报道地。兰州是在条件最不友好的环境下生长的生态，是观察地下偶像最原始形态的窗口。</div>
+          </div>
+          <div>
+            <div style="font-size:13.5px;font-weight:600;color:var(--green2);margin-bottom:3px">② 对比价值</div>
+            <div style="font-size:13px;color:var(--text2)">资源差距最悬殊的地方，最能揭示真实成本与坚持动力——这个问题只有西北视角能回答。</div>
+          </div>
+          <div>
+            <div style="font-size:13.5px;font-weight:600;color:var(--green2);margin-bottom:3px">③ 样本普遍性</div>
+            <div style="font-size:13px;color:var(--text2)">中国大多数地下偶像团体并不在一线城市。西北的经验比上海更具代表性。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card amber" style="margin-bottom:0;height:100%">
+        <div style="font-size:14px;font-weight:600;color:var(--amber);margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid rgba(196,134,10,.15)">为何不只写西北——与大城市联动</div>
+        <div style="display:flex;flex-direction:column;gap:.9rem">
+          <div>
+            <div style="font-size:13.5px;font-weight:600;color:var(--amber);margin-bottom:3px">① 对话大城市数据</div>
+            <div style="font-size:13px;color:var(--text2)">主稿2将西北演出成本结构与南方城市数据横向对比，以数字揭示地域差异对从业者成本压力的传导机制。</div>
+          </div>
+          <div>
+            <div style="font-size:13.5px;font-weight:600;color:var(--amber);margin-bottom:3px">② 行业结构参照来自大城市</div>
+            <div style="font-size:13px;color:var(--text2)">主流商业资源、经纪合同模板、演出市场规范都由大城市主导制定，西北游离其外是被排除的结果，需以大城市标准作参照。</div>
+          </div>
+          <div>
+            <div style="font-size:13.5px;font-weight:600;color:var(--amber);margin-bottom:3px">③ 全国比较视角</div>
+            <div style="font-size:13px;color:var(--text2)">主稿3追踪离团者时兼顾全国样本，避免将西北经验孤岛化。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--green);color:#fff;border-radius:12px;padding:1.2rem 1.8rem;text-align:center">
+    <p style="font-family:var(--serif);font-size:1.15rem;font-weight:600;letter-spacing:.05em">以西北为原点，向全国坐标延伸</p>
+    <p style="font-size:13px;opacity:.7;margin-top:.3rem">西北提供最少被讲述的故事，大城市提供理解这个故事的比较结构。两者缺一不可。</p>
+  </div>
+
+  <div style="margin-top:1.5rem">
+    <div style="font-size:13px;font-weight:600;color:var(--text2);margin-bottom:.8rem;letter-spacing:.05em">六个维度的差异化</div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-title">🗺 地域覆盖</div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>既有报道</span><b style="color:#B0A090">全为东部城市</b></div><div class="diff-bar"><div class="diff-fill-old bar-old" style="width:100%"></div></div></div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>本组报道</span><b style="color:var(--coral)">聚焦西北，首次呈现</b></div><div class="diff-bar"><div class="diff-fill-old bar-new" style="width:30%"></div></div></div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-title">⏱ 时间维度</div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>既有报道</span><b style="color:#B0A090">聚焦在役当下</b></div><div class="diff-bar"><div class="diff-fill-old bar-old" style="width:85%"></div></div></div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>本组报道</span><b style="color:var(--coral)">追踪离团后1—3年</b></div><div class="diff-bar"><div class="diff-fill-old bar-new" style="width:60%"></div></div></div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-title">🔍 叙事层次</div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>既有报道</span><b style="color:#B0A090">现象描述为主</b></div><div class="diff-bar"><div class="diff-fill-old bar-old" style="width:70%"></div></div></div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>本组报道</span><b style="color:var(--coral)">深入机制追问</b></div><div class="diff-bar"><div class="diff-fill-old bar-new" style="width:90%"></div></div></div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-title">👥 信源构成</div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>既有报道</span><b style="color:#B0A090">主要为现役偶像</b></div><div class="diff-bar"><div class="diff-fill-old bar-old" style="width:40%"></div></div></div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>本组报道</span><b style="color:var(--coral)">多方信源交叉</b></div><div class="diff-bar"><div class="diff-fill-old bar-new" style="width:85%"></div></div></div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-title">📋 体裁融合</div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>既有报道</span><b style="color:#B0A090">单一文字形式</b></div><div class="diff-bar"><div class="diff-fill-old bar-old" style="width:30%"></div></div></div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>本组报道</span><b style="color:var(--coral)">文字+视频+海报</b></div><div class="diff-bar"><div class="diff-fill-old bar-new" style="width:100%"></div></div></div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-title">⚖️ 价值立场</div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>既有报道</span><b style="color:#B0A090">多数客观或正面</b></div><div class="diff-bar"><div class="diff-fill-old bar-old" style="width:55%"></div></div></div>
+        <div class="diff-bar-row"><div class="diff-bar-label"><span>本组报道</span><b style="color:var(--coral)">适度批判性自觉</b></div><div class="diff-bar"><div class="diff-fill-old bar-new" style="width:80%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="flower-divider">
+  <svg class="flower-svg" width="36" height="48" viewBox="0 0 36 48" fill="none">
+    <path d="M18 46 C18 34 16 26 18 16 C20 10 24 6 18 1" stroke="#E8533F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 16 C12 12 6 13 2 8" stroke="#E8533F" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="18" cy="2" r="3" fill="none" stroke="#C4860A" stroke-width="1.5"/>
+    <path d="M15 2 C12 -1 8 0 7 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M21 2 C24 -1 28 0 29 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M18 28 C12 26 7 29 4 25" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 36 C24 34 30 36 33 32" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- SECTION 5: 核心命题 + 三篇主稿 -->
+<section id="stories">
+  <div class="section-header">
+    <p class="section-eyebrow">05 · 呈现方式</p>
+    <h2 class="section-title">核心命题与三篇主稿</h2>
+  </div>
+
+  <div class="big-quote" style="margin-bottom:1.8rem">
+    <p>中国地下偶像是一种<em>"自费练习生"</em>——用时间、金钱与情绪劳动，在没有工业托底、缺乏制度保护的灰色地带维持一个梦想，折射出当代年轻人在主流通道之外寻找自我表达空间时所面临的系统性困境。</p>
+  </div>
+
+  <div class="flow-row" style="margin-bottom:1.8rem">
+    <div class="flow-item"><div class="num">1</div>个体代价（谁在承担）</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-item"><div class="num">2</div>结构缺位（谁该负责）</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-item"><div class="num">3</div>离场定义（社会如何评判）</div>
+  </div>
+
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-head s1">主稿 1 · 深度人物特稿</div>
+      <div class="story-body">
+        <div class="story-title">当灯光熄灭，账单还在</div>
+        <div class="story-genre">约7000—8000字 · 2—3位核心人物</div>
+        <span class="story-method-tag s1-tag">场景还原</span>
+        <span class="story-method-tag s1-tag">人物细节</span>
+        <span class="story-method-tag s1-tag">拒绝"追梦"框架</span>
+        <p class="story-q" style="margin-top:.7rem">"代价由谁来算？"——排练室、演出后台、换装间，用细节呈现内心张力，避免标签化叙述。</p>
+      </div>
+    </div>
+    <div class="story-card">
+      <div class="story-head s2">主稿 2 · 调查报道</div>
+      <div class="story-body">
+        <div class="story-title">谁在灰色地带获益</div>
+        <div class="story-genre">约6000—7000字 · 成本数据为锚</div>
+        <span class="story-method-tag s2-tag">多方信源核实</span>
+        <span class="story-method-tag s2-tag">成本结构拆解</span>
+        <span class="story-method-tag s2-tag">权力结构分析</span>
+        <p class="story-q" style="margin-top:.7rem">"无合同、无保障、无监管"的结构性成因——从现象→问题→原因→受益方→代价承担者逐层递进。</p>
+      </div>
+    </div>
+    <div class="story-card">
+      <div class="story-head s3">主稿 3 · 纵向时间线叙事</div>
+      <div class="story-body">
+        <div class="story-title">她们离开之后</div>
+        <div class="story-genre">约6000—7000字 · 离团满1年的前成员</div>
+        <span class="story-method-tag" style="background:rgba(196,134,10,.1);color:var(--amber)">当时—离开—现在</span>
+        <span class="story-method-tag" style="background:rgba(196,134,10,.1);color:var(--amber)">受访者自定义意义</span>
+        <p class="story-q" style="margin-top:.7rem">"离开是主动还是被迫？这段经历在主流叙事中被允许占据什么位置？"——不预设结论，不用"青春代价"框架。</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1.2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div class="card white" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem;margin-bottom:.4rem">📓</div>
+      <div style="font-size:14px;font-weight:600;color:var(--green);margin-bottom:.3rem">记者手记</div>
+      <div style="font-size:12.5px;color:var(--text2)">约2000字 · 第一人称随笔 · 在场感与自反性</div>
+    </div>
+    <div class="card white" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem;margin-bottom:.4rem">🎬</div>
+      <div style="font-size:14px;font-weight:600;color:var(--green);margin-bottom:.3rem">视频短片</div>
+      <div style="font-size:12.5px;color:var(--text2)">5—8分钟 · Direct Cinema观察式跟拍 · 现场感</div>
+    </div>
+    <div class="card white" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem;margin-bottom:.4rem">🖼</div>
+      <div style="font-size:14px;font-weight:600;color:var(--green);margin-bottom:.3rem">视觉海报</div>
+      <div style="font-size:12.5px;color:var(--text2)">每团队一张 + 总海报 · 不愿露脸改用插画</div>
+    </div>
+  </div>
+</section>
+
+<div class="flower-divider">
+  <svg class="flower-svg" width="36" height="48" viewBox="0 0 36 48" fill="none">
+    <path d="M18 46 C18 34 16 26 18 16 C20 10 24 6 18 1" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 16 C12 12 6 13 2 8" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 12 C24 8 28 4 26 1" stroke="#3E7A54" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="18" cy="2" r="3" fill="none" stroke="#C4860A" stroke-width="1.5"/>
+    <path d="M15 2 C12 -1 8 0 7 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M21 2 C24 -1 28 0 29 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- SECTION 6: 可行性 -->
+<section id="feasibility">
+  <div class="section-header">
+    <p class="section-eyebrow">06 · 可行性</p>
+    <h2 class="section-title">做得成：基础与预案</h2>
+  </div>
+
+  <div class="two-col">
+    <div class="card green">
+      <div style="font-size:14px;font-weight:600;color:var(--green);margin-bottom:1rem;display:flex;align-items:center;gap:6px">
+        <span style="color:#4CAF50">✔</span> 已具备的可行性基础
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.7rem">
+        <div style="display:flex;gap:8px"><span style="color:var(--green2);flex-shrink:0">·</span><div style="font-size:13.5px;color:var(--text2)"><b style="color:var(--green)">采访对象已落地</b>　已与三支西北自营地下偶像团队建立初步信任关系，对方意愿明确</div></div>
+        <div style="display:flex;gap:8px"><span style="color:var(--green2);flex-shrink:0">·</span><div style="font-size:13.5px;color:var(--text2)"><b style="color:var(--green)">前期素材已积累</b>　成团经历、自营困境、演出现状、粉丝关系等基础材料已获得</div></div>
+        <div style="display:flex;gap:8px"><span style="color:var(--green2);flex-shrink:0">·</span><div style="font-size:13.5px;color:var(--text2)"><b style="color:var(--green)">离团者线索已启动</b>　通过受访团队获取前成员基本情况，追踪入口已建立</div></div>
+        <div style="display:flex;gap:8px"><span style="color:var(--green2);flex-shrink:0">·</span><div style="font-size:13.5px;color:var(--text2)"><b style="color:var(--green)">视觉制作条件具备</b>　团队成员具备平面设计与视频剪辑能力</div></div>
+        <div style="display:flex;gap:8px"><span style="color:var(--green2);flex-shrink:0">·</span><div style="font-size:13.5px;color:var(--text2)"><b style="color:var(--green)">团队具备报道经验</b>　三人均为新闻学专业，熟悉新闻伦理规范</div></div>
+      </div>
+    </div>
+
+    <div class="card coral">
+      <div style="font-size:14px;font-weight:600;color:var(--coral);margin-bottom:1rem;display:flex;align-items:center;gap:6px">
+        <span>⚡</span> 预期困难与对应预案
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.8rem">
+        <div style="padding:.7rem;background:#fff;border-radius:8px">
+          <div style="font-size:13px;font-weight:600;color:var(--coral);margin-bottom:3px">离团者难以联系</div>
+          <div style="font-size:12.5px;color:var(--text2)">→ 受访者介绍 / 追踪公开毕业声明 / 资深粉丝扩展</div>
+        </div>
+        <div style="padding:.7rem;background:#fff;border-radius:8px">
+          <div style="font-size:13px;font-weight:600;color:var(--coral);margin-bottom:3px">受访者中途退出</div>
+          <div style="font-size:12.5px;color:var(--text2)">→ 签署知情同意书，明确随时退出权，充分匿名处理</div>
+        </div>
+        <div style="padding:.7rem;background:#fff;border-radius:8px">
+          <div style="font-size:13px;font-weight:600;color:var(--coral);margin-bottom:3px">视觉授权难落实</div>
+          <div style="font-size:12.5px;color:var(--text2)">→ 不愿露脸改用插画、剪影替代</div>
+        </div>
+        <div style="padding:.7rem;background:#fff;border-radius:8px">
+          <div style="font-size:13px;font-weight:600;color:var(--coral);margin-bottom:3px">行业数据难以获取</div>
+          <div style="font-size:12.5px;color:var(--text2)">→ 微观财务数据 + 场地方访谈 + 日本行业背景参照</div>
+        </div>
+        <div style="padding:.7rem;background:#fff;border-radius:8px">
+          <div style="font-size:13px;font-weight:600;color:var(--coral);margin-bottom:3px">采访与学业时间冲突</div>
+          <div style="font-size:12.5px;color:var(--text2)">→ 周期拉长至整学年，线上访谈补充</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="flower-divider">
+  <svg class="flower-svg" width="36" height="48" viewBox="0 0 36 48" fill="none">
+    <path d="M18 46 C18 34 16 26 18 16 C20 10 24 6 18 1" stroke="#C4860A" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 16 C12 12 6 13 2 8" stroke="#C4860A" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="18" cy="2" r="3" fill="none" stroke="#C4860A" stroke-width="1.5"/>
+    <path d="M15 2 C12 -1 8 0 7 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M21 2 C24 -1 28 0 29 3" stroke="#C4860A" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M18 28 C12 26 7 29 4 25" stroke="#E8533F" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- SECTION 7: 时间线 -->
+<section id="timeline">
+  <div class="section-header">
+    <p class="section-eyebrow">07 · 工作计划</p>
+    <h2 class="section-title">进度安排与成员分工</h2>
+  </div>
+
+  <div class="timeline" style="margin-bottom:2.5rem">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">2026.5—2026.7</div>
+      <div class="tl-phase">阶段一</div>
+      <div class="tl-desc">田野进入与初步采访<br>观察演出，第一轮访谈，拍摄现场影像</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">2026.9—2026.11</div>
+      <div class="tl-phase">阶段二</div>
+      <div class="tl-desc">深度采访与素材收集<br>完成全部核心访谈，获取视觉授权</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">2026.11—2027.1</div>
+      <div class="tl-phase">阶段三</div>
+      <div class="tl-desc">写作与视觉制作<br>三篇主稿+手记初稿，海报+短片剪辑</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">2027.1—2027.4</div>
+      <div class="tl-phase">阶段四</div>
+      <div class="tl-desc">修改与定稿<br>根据教师意见修改，完成答辩材料</div>
+    </div>
+  </div>
+
+  <div class="role-row">
+    <div class="role-card">
+      <div class="role-name">史伟馨</div>
+      <div class="role-tags">
+        <span class="role-tag">文稿撰写</span>
+        <span class="role-tag">采访提纲</span>
+        <span class="role-tag">主机位拍摄</span>
+        <span class="role-tag">文案资料搜集</span>
+        <span class="role-tag">海报设计</span>
+        <span class="role-tag">最终排版</span>
+      </div>
+    </div>
+    <div class="role-card">
+      <div class="role-name">牟宁霞</div>
+      <div class="role-tags">
+        <span class="role-tag">文稿撰写</span>
+        <span class="role-tag">主导采访</span>
+        <span class="role-tag">联络协调</span>
+        <span class="role-tag">副机位拍摄</span>
+        <span class="role-tag">录音</span>
+        <span class="role-tag">后期剪辑</span>
+      </div>
+    </div>
+    <div class="role-card">
+      <div class="role-name">孟洋</div>
+      <div class="role-tags">
+        <span class="role-tag">文稿撰写</span>
+        <span class="role-tag">主导采访</span>
+        <span class="role-tag">联络协调</span>
+        <span class="role-tag">副机位拍摄</span>
+        <span class="role-tag">录音</span>
+        <span class="role-tag">后期剪辑</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<div class="closing">
+  <h2>"灯光熄灭后，账单还在。<br>当年轻人选择在主流之外寻找表达空间，<br>这个社会给了他们什么，又拿走了什么？"</h2>
+  <p>谢谢聆听，敬请各位老师批评指正</p>
+  <div class="close-meta">史伟馨 · 牟宁霞 · 孟洋 | 指导教师：白姗姗 | 西北民族大学新闻传播学院</div>
+</div>
+
+<footer>
+  暗处生花——西北地下偶像青春纪实 · 开题答辩 · 西北民族大学新闻传播学院 2025—2026
+</footer>
+
+</body>
+</html>
